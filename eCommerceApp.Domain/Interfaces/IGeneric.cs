@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace eCommerceApp.Domain.Interfaces
 {
-    internal class IGeneric
+    public class IGeneric<TEntity> where TEntity : class
     {
+        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<TEntity> GetByIdAsync(Guid id);
+        Task<int> AddAsync(TEntity entity);
+        Task<int> DeleteAsync(Guid id);
     }
 }
