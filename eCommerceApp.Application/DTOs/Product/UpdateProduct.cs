@@ -1,8 +1,10 @@
-﻿namespace eCommerceApp.Application.DTOs.Product
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace eCommerceApp.Application.DTOs.Product
 {
     public class UpdateProduct : ProductBase
     {
-        public Guid Id { get; set; }
-        
+        [Required]
+        public Guid Id { get; set; }   
     }
 }

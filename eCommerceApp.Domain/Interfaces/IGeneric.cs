@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eCommerceApp.Domain.Interfaces
 {
-    public class IGeneric<TEntity> where TEntity : class
+    public interface IGeneric<TEntity> where TEntity : class
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(Guid id);
