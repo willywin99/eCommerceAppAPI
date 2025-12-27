@@ -4,11 +4,6 @@ using eCommerceApp.Application.DTOs.Product;
 using eCommerceApp.Application.Services.Interfaces;
 using eCommerceApp.Domain.Entities;
 using eCommerceApp.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace eCommerceApp.Application.Services.Implementations
 {
@@ -25,8 +20,9 @@ namespace eCommerceApp.Application.Services.Implementations
         public async Task<ServiceResponse> DeleteAsync(Guid id)
         {
             int result = await productInterface.DeleteAsync(id);
+
             return result > 0 ? new ServiceResponse(true, "Product deleted!"):
-                new ServiceResponse(false, "Product failed to be deleted");
+                new ServiceResponse(false, "Category not found or failed to delete.");
         }
 
         public async Task<IEnumerable<GetProduct>> GetAllAsync()
