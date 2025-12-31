@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using eCommerceApp.Domain.Entities.Identity;
+using System.Net;
 
 namespace eCommerceApp.Infrastructure.Repositories.Authentication
 {
@@ -48,7 +49,8 @@ namespace eCommerceApp.Infrastructure.Repositories.Authentication
                 rng.GetBytes(randomBytes);
             }
             
-            return Convert.ToBase64String(randomBytes);
+            string token = Convert.ToBase64String(randomBytes);
+            return WebUtility.UrlEncode(token);
         }
 
         public List<Claim> GetUserClaimsFromToken(string token)
