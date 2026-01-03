@@ -11,7 +11,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("log/log.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
-builder.Host.UseSerilog();
+//builder.Host.UseSerilog();
 Log.Logger.Information("Application is building.........");
 
 // Add services to the container.
@@ -29,7 +29,7 @@ builder.Services.AddCors(builder =>
     {
         options.AllowAnyHeader()
         .AllowAnyMethod()
-        .WithOrigins("https://localhost:7025")
+        .WithOrigins("https://localhost:7239")
         .AllowCredentials();
     });
 });
