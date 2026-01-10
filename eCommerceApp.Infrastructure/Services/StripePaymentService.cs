@@ -34,11 +34,11 @@ namespace eCommerceApp.Infrastructure.Services
 
                 var options = new SessionCreateOptions
                 {
-                    PaymentMethodTypes = ["usd"],
+                    PaymentMethodTypes = ["card"],
                     LineItems = lineItems,
                     Mode = "payment",
-                    SuccessUrl = "https:localhost:7025/payment-success",
-                    CancelUrl = "https:localhost:7025/payment-cancel"
+                    SuccessUrl = "https://localhost:7239/payment-success",
+                    CancelUrl = "https://localhost:7239/payment-cancel"
                 };
 
                 var service = new SessionService();
