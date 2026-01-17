@@ -118,3 +118,8 @@ secrets.json
 
 # IIS / Web server
 App_Data/
+
+# Ignore all appsettings files in any folder
+appsettings.json
+**/appsettings.json
+# **/appsettings.*.json

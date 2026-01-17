@@ -9,5 +9,6 @@ namespace eCommerceApp.Application.DTOs.Product
         public Guid Id { get; set; }
 
         public GetCategory? Category { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }
